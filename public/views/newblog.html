@@ -1,0 +1,14 @@
+<div class="newblog" ng-controller="MainController">
+      <form name="postForm" ng-submit="addPost()" required>
+            <h4>Title</h4>
+            <input type="text" name="newPost" ng-model="newPost" />
+            <h4>Body</h4>
+            <textarea ng-model="blog.posts.body" rows="15"></textarea><br>
+<!--             <label for="">Featured Image URL</label>
+            <input type="text" ng-model="blog.posts.image" placeholder="Blog Image" /><br> -->
+            <label for="">by:</label>
+            <input type="text" ng-model="blog.posts.author" placeholder="Author Name" required />
+            <button>Submit</button>
+      </select>
+      </form>
+</div>

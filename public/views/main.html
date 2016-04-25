@@ -1,0 +1,15 @@
+<div ng-controller="MainController">
+<h2>recent posts</h2>
+
+<div class="wrapper"> 
+	<div class="container" ng-repeat="post in blog.posts">  
+		<p>{{ post.title }}</p>
+   		<p>{{ post.author}}</p> 
+   		<p>{{ post.pubdate | date }}</p><br>
+		<div>
+			<p>{{ post.body }}</p>
+      	</div> 
+	</div>
+</div>
+
+</div>

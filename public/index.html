@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog App</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Dosis|Nunito|Orbitron|Poiret+One|Lato|Exo:400, 100|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body ng-app="blog-app" ng-controller="MainController">
+
+<div class="header">
+<h1>{{ blogtitle }}</h1>
+<a href="/#/newblog"><h3>|create new blog|</h3></a>
+<a href="/#/"><h3>|blog board|</h3></a>
+</div>
+
+<ng-view>
+</ng-view>
+
+<!-- Angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
+
+<!-- My Scripts -->
+<script src="app.js"></script>
+<script src="controllers/mainCtrl.js"></script>
+
+</body>
+</html>
