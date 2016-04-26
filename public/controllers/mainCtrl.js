@@ -2,7 +2,13 @@ var app = angular.module("blog-app");
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) { 
 
-  $scope.apptitle = "simple blog app";
+  $scope.apptitle = "AngularJS Blog";
+
+  var blogpost = {
+    title: '',
+    author: '',
+    body: ''
+  };
 
   var blog = this;
 
@@ -35,8 +41,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
 
 //Create a new blog post.
-  
-  blog.post = {};
 
   blog.addPost = function() {
     blog.unshift(this.post);
