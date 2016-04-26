@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
 var http = require('http');
-var grunt = require('grunt');
 var path = require('path');
 var fs = require('fs');
 var dotenv = require('dotenv');

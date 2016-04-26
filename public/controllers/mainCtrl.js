@@ -2,16 +2,11 @@ var app = angular.module("blog-app");
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http) { 
 
-  $scope.blog = this;
-  $scope.blogtitle = "simple blog app";
-  
-  $scope.newPost = {
-    title: "",
-    author: "",
-    body:""
-  };
+  $scope.apptitle = "simple blog app";
 
-  $scope.blog.posts = [
+  var blog = this;
+
+  $scope.blog = [
     {
       title: 'First Blog Post', 
       author: 'Princeton Collins', 
@@ -41,8 +36,12 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
 //Create a new blog post.
   
-  $scope.addPost = function() {
-    $scope.blog.posts.push({title: $scope.newPost.title, author: $scope.newPost.author, pubdate: new Date(), body: $scope.newPost.body})
+  blog.post = {};
+
+  blog.addPost = function() {
+    blog.unshift(this.post);
+    blog.post = {};
+    console.log("Post made.");
   }
 
 }]);
