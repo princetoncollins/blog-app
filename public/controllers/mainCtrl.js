@@ -40,7 +40,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
   blog.addPost = function() {
     blog.unshift(this.post);
-    blog.post = {};
     console.log("Post made.");
   }
 

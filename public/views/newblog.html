@@ -2,19 +2,19 @@
       
       <form name="newPost" ng-submit="addPost()" required>
             
-            <h4>Title</h4>
-            <input type="text" name="newPost" ng-model="blog.post.title" />
+            <h4>New Blog</h4>
+            <input class="blogtitle" type="text" name="newPost" ng-model="blogpost.title" placeholder="Blog Title" /><br>
            
-            <h4>Body</h4>
-            <textarea ng-model="blog.post.body" rows="15"></textarea><br>
+            <textarea ng-model="blogpost.body" rows="15" placeholder="Write the body of your blog here."></textarea><br>
 
 <!--        <label for="">Featured Image URL</label>
             <input type="text" ng-model="blog.posts.image" placeholder="Blog Image" /><br> -->
            
-            <label for="">by:</label>
-            <input type="text" ng-model="blog.post.author" placeholder="Author Name" required />
+            <label for="">by:</label><br>
+            <input class="blogauthor" type="text" ng-model="blogpost.author" placeholder="Author Name" required /><br><br>
             
             <button>Submit</button>
+
       </form>
 
 </div>

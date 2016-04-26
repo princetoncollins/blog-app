@@ -17,6 +17,7 @@ a {
   height: 125px;
   width: 100%;
   background: #6089be;
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center; }
@@ -94,6 +95,60 @@ h3:hover {
 
 .newblog {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  height: 100%;
+  width: 100%; }
+  .newblog form {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .newblog form h4 {
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 22px;
+      color: #6089be;
+      align-self: center; }
+    .newblog form label {
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 18px;
+      color: #6089be;
+      align-self: center; }
+    .newblog form input.blogtitle {
+      border: 2px solid #00337a;
+      border-radius: 3px;
+      color: #6089be;
+      padding: 10px;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 30px; }
+    .newblog form input.blogauthor {
+      border: 2px solid #00337a;
+      border-radius: 3px;
+      color: #6089be;
+      padding: 10px;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 20px; }
+    .newblog form textarea {
+      border: 2px solid #00337a;
+      border-radius: 3px;
+      color: #333;
+      padding: 10px;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 15px; }
+    .newblog form button {
+      padding: 10px;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 18px;
+      color: #00337a;
+      background: #ccc;
+      border: 2px solid #00337a;
+      border-radius: 3px;
+      width: 50%;
+      align-self: center; }
+    .newblog form button:hover {
+      color: white;
+      background: #00337a; }
+    .newblog form ::-webkit-input-placeholder {
+      color: #6089be; }
 
 /*# sourceMappingURL=styles.css.map */
