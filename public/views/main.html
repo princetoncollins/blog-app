@@ -1,14 +1,13 @@
-<div ng-controller="MainController">
-
-<div class="wrapper"> 
-	<div class="container" ng-repeat="post in blog">  
-		<p>{{ post.title }}</p>
-   		<p>{{ post.author}}</p> 
-   		<p>{{ post.pubdate | date }}</p><br>
-		<div>
-			<p>{{ post.body }}</p>
-      	</div> 
+<div>
+	<div class="wrapper"> 
+		<div class="container" ng-repeat="post in blog">  
+			<p>{{ post.title }}</p>
+	   		<p>{{ post.author}}</p> 
+	   		<p>{{ post.pubdate | date }}</p><br>
+			<div>
+				<p>{{ post.body }}</p>
+	      	</div> 
+		</div>
 	</div>
 </div>
 
-</div>

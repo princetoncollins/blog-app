@@ -1,50 +1,30 @@
 var app = angular.module("blog-app");
 
-app.controller('MainController', ['$scope', '$http', function($scope, $http) { 
+app.controller('MainController', ['$scope', '$http', function($scope, $http, mainService) { 
 
   $scope.apptitle = "AngularJS Blog";
 
-  var blogpost = {
-    title: '',
-    author: '',
-    body: ''
-  };
+  $http.get('blogs.json').success(function(data){
+      $scope.blog = data;
+    });
 
-  var blog = this;
-
-  $scope.blog = [
-    {
-      title: 'First Blog Post', 
-      author: 'Princeton Collins', 
-      pubdate: new Date('2014', '03', '08'), 
-      body: 'This is the first post.'
-    },
-    {
-      title: 'Second Blog Post', 
-      author: 'Ezra Nash Collins', 
-      pubdate: new Date('2014', '03', '08'), 
-      body: 'Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah.'
-    },
-    {
-      title: 'Third Blog Post', 
-      author: 'Isabel Quayle Collins', 
-      pubdate: new Date('2014', '03', '08'), 
-      body: 'Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah.'
-    },
-    {
-      title: 'Fourth Blog Post', 
-      author: 'Sarah Jane Collins', 
-      pubdate: new Date('2014', '03', '08'), 
-      body: 'Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah. Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah. Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah.'
-    }     
-    ]
-
-
-//Create a new blog post.
-
-  blog.addPost = function() {
-    blog.unshift(this.post);
-    console.log("Post made.");
+  $scope.addPost = function() {
+    var post = {
+      title: $scope.post.title,
+      body: $scope.post.body,
+      author: $scope.post.author
+    };
+    $scope.blog.unshift(post);
+    var data = JSON.stringify(post.serializeArray());
+    $http({
+      method: "POST",
+      url: "../blogs.json",
+      data: post,
+      success: function(){},
+      dataType: "JSON",
+      contentType: 'application/json; charset=utf-8'
+    })
+    console.log('Blog created.');
   }
 
 }]);

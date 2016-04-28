@@ -10,9 +10,19 @@
 <body ng-app="blog-app" ng-controller="MainController">
 
 <div class="header">
-	<h1>{{ apptitle }}</h1>
-	<a href="/#/newblog"><h3>Create New Blog</h3></a>
+	<div>
+	<i style="color: white;" class="fa fa-magic fa-3x"></i>
+	<h1>
+		<span style="color: #ddd">AngularJS</span>
+		<span style="color: white;">|</span>
+		<span style="color: #00337a;">Blog</span>
+	</h1>
+	</div>
+	<div>
 	<a href="/#/"><h3>Blog Board</h3></a>
+	&nbsp;&nbsp;&nbsp;<span style="font-size: 35px; color: #00337a;">|</span>&nbsp;&nbsp;&nbsp;
+	<a href="/#/newblog"><h3>Create New Blog</h3></a>
+	</div>
 </div>
 
 <ng-view>
