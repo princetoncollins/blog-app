@@ -11,29 +11,70 @@ var fs = require('fs');
 var dotenv = require('dotenv');
 
 var port = 9001;
-// var mongoUri = 'mongodb://localhost:27017/op';
+var mongoUri = 'mongodb://localhost:27017/blog-app';
 
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
-//200 Response.
+//Blog Data & Data Storage.
 
-// function onRequest(request, response) {
-// 	console.log('A user has made a request!' + request.url);
-// 	response.writeHead(200, {"Content-Type": "text/plain" });
-// 	response.end();
-// }
+var Schema = mongoose.Schema;
 
-// app.get('/', function(request, response) {
-//     response.sendFile(path.join(__dirname + 'index.html'));
-//     response.render('index.html');
-// });
+var blogSchema = new Schema({
+	title : String,
+	body : String,
+	author : String,
+	pubdate : {type: Date, default: Date.now}
+});
 
+var Blog = mongoose.model('Blog', blogSchema);
 
+//Routes.
 
+app.get('/api/blogs', function(req, res) {
+	Blog.find(function (err, blogs) {
+		if (err)
+			res.send(err)
+		res.json(blogs)
+	});
+});
 
+app.post('/api/blogs', function(req, res) {
+	Blog.create({
+		title: req.body.title,
+		body: req.body.body,
+		author: req.body.author,
+		date: req.body.date
+	}, function(err, blog) {
+		if (err)
+			res.send(err);
+		Blog.find(function(err, blogs) {
+			if (err)
+				res.send(err)
+			res.json(blogs);
+		});
+	});
+});
+
+app.delete('/api/blogs/:blog_id', function(req, res) {
+	Blog.remove({
+		_id: req.params.blog_id
+	}, function(err, blog) {
+		if (err)
+			res.send(err);
+		Blog.find(function(err, blogs) {
+			if (err)
+				res.send(err)
+			res.json(blogs);
+		});
+	});
+});
+
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html'); 
+});
 
 
 //_________________________________________________________________________________________________________________________
@@ -42,10 +83,10 @@ app.use(bodyParser.json());
 
 module.exports = router;
 
-// mongoose.connect(mongoUri);
-// mongoose.connection.once('open', function() {
-//   console.log("Hey there! We are now connected to MongoDB at: ", mongoUri);
-// });
+mongoose.connect(mongoUri);
+mongoose.connection.once('open', function() {
+  console.log("Hey there! We are now connected to MongoDB at: ", mongoUri);
+});
 
 app.listen(port, function() {
   console.log('Magic! Listening on port: ', port);

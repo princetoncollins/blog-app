@@ -1,16 +1,16 @@
 <div class="newblog">
       
-      <form name="newPost" ng-submit="addPost(post)" required>
+      <form>
             <i class="fa fa-pencil-square-o fa-5x"></i><br>
 
-            <input class="blogtitle" type="text" name="title" ng-model="post.title" placeholder="Blog Title" required /><br>
+            <input class="blogtitle" type="text" ng-model="formData.title" placeholder="Blog Title" /><br>
            
-            <textarea name="body" ng-model="post.body" rows="15" placeholder="Write the body of your blog here."></textarea><br>
+            <textarea ng-model="formData.body" rows="15" placeholder="Write the body of your blog here."></textarea><br>
            
             <label for="">by:</label><br>
-            <input class="blogauthor" type="text" name="author" ng-model="post.author" placeholder="Author Name" required /><br><br>
+            <input class="blogauthor" type="text" ng-model="formData.author" placeholder="Author Name" /><br><br>
             
-            <button>Submit</button>
+            <button type="submit" ng-click="addPost()">Submit</button>
 
       </form>
 
