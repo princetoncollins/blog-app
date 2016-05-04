@@ -19,6 +19,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 //Blog Data & Data Storage.
+//_________________________________________________________________________________________________________________________
+
 
 var Schema = mongoose.Schema;
 
@@ -32,6 +34,7 @@ var blogSchema = new Schema({
 var Blog = mongoose.model('Blog', blogSchema);
 
 //Routes.
+//_________________________________________________________________________________________________________________________
 
 app.get('/api/blogs', function(req, res) {
 	Blog.find(function (err, blogs) {
@@ -76,10 +79,8 @@ app.get('*', function(req, res) {
     res.sendfile('./public/index.html'); 
 });
 
-
-//_________________________________________________________________________________________________________________________
-
 //Connectivity.
+//_________________________________________________________________________________________________________________________
 
 module.exports = router;
 
