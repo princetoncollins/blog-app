@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Blog App</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link href='http://fonts.googleapis.com/css?family=Raleway|Dosis|Nunito|Orbitron|Poiret+One|Lato|Exo:400, 100|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+
 <body ng-app="blog-app" ng-controller="MainController">
 
 <div class="header">
@@ -19,18 +22,20 @@
 	</h1>
 	</div>
 	<div>
-	<a href="/#/"><h3>Blog Board</h3></a>
+	<a ui-sref="blogs"><h3>Blog Board</h3></a>
 	&nbsp;&nbsp;&nbsp;<span style="font-size: 35px; color: #00337a;">|</span>&nbsp;&nbsp;&nbsp;
-	<a href="/#/newblog"><h3>Create New Blog</h3></a>
+	<a ui-sref="newblog"><h3>Create New Blog</h3></a>
 	</div>
 </div>
 
-<ng-view>
-</ng-view>
+<ui-view>
+</ui-view>
+
 
 <!-- Angular -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
 <!-- My Scripts -->
 <script src="app.js"></script>

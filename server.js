@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 var Schema = mongoose.Schema;
 
 var blogSchema = new Schema({
-	title : String,
-	body : String,
-	author : String,
+	title : {type: String, min: 8, max: 50, required: true},
+	body : {type: String, required: true},
+	author : {type: String, min: 3, max: 40, required: true},
 	pubdate : {type: Date, default: Date.now}
 });
 
@@ -36,14 +36,25 @@ var Blog = mongoose.model('Blog', blogSchema);
 //Routes.
 //_________________________________________________________________________________________________________________________
 
+// GET BLOGS!
 app.get('/api/blogs', function(req, res) {
 	Blog.find(function (err, blogs) {
 		if (err)
-			res.send(err)
-		res.json(blogs)
+			res.send(err);
+		res.json(blogs);
 	});
 });
 
+// GET BLOG BY ID!
+app.get('/api/blogs/:blog_id', function(req, res) { 
+	Blog.findById(req.params.id, function(err, blog) {
+		if (err)
+			res.send(err);
+		res.json(blog);
+	});
+});
+
+// POST BLOG!
 app.post('/api/blogs', function(req, res) {
 	Blog.create({
 		title: req.body.title,
@@ -55,12 +66,13 @@ app.post('/api/blogs', function(req, res) {
 			res.send(err);
 		Blog.find(function(err, blogs) {
 			if (err)
-				res.send(err)
+				res.send(err);
 			res.json(blogs);
 		});
 	});
 });
 
+// DELETE BLOG!
 app.delete('/api/blogs/:blog_id', function(req, res) {
 	Blog.remove({
 		_id: req.params.blog_id
@@ -69,7 +81,7 @@ app.delete('/api/blogs/:blog_id', function(req, res) {
 			res.send(err);
 		Blog.find(function(err, blogs) {
 			if (err)
-				res.send(err)
+				res.send(err);
 			res.json(blogs);
 		});
 	});
@@ -82,7 +94,7 @@ app.get('*', function(req, res) {
 //Connectivity.
 //_________________________________________________________________________________________________________________________
 
-module.exports = router;
+// module.exports = router;
 
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function() {
