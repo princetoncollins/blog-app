@@ -1,6 +1,6 @@
 var app = angular.module("blog-app");
 
-app.controller('MainController', ['$scope', '$http', '$location', '$stateParams', function($scope, $http, $location, $stateParams) { 
+app.controller('MainController', ['$scope', '$http', '$location', '$stateParams', '$state', function($scope, $http, $location, $stateParams, $state) { 
 
   $scope.apptitle = "AngularJS Blog";
 
