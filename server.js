@@ -5,6 +5,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var mongojs = require('mongojs');
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
@@ -47,10 +48,12 @@ app.get('/api/blogs', function(req, res) {
 
 // GET BLOG BY ID!
 app.get('/api/blogs/:blog_id', function(req, res) { 
-	Blog.findById(req.params.id, function(err, blog) {
+	Blog.findOne({
+		_id: req.params.blog_id
+	}, function(err, readblog) {
 		if (err)
 			res.send(err);
-		res.json(blog);
+		res.json(readblog);
 	});
 });
 
@@ -87,9 +90,9 @@ app.delete('/api/blogs/:blog_id', function(req, res) {
 	});
 });
 
-app.get('*', function(req, res) {
-    res.sendfile('./public/index.html'); 
-});
+// app.get('*', function(req, res) {
+//     res.sendfile('./public/index.html'); 
+// });
 
 //Connectivity.
 //_________________________________________________________________________________________________________________________
