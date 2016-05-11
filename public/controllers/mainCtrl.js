@@ -6,8 +6,6 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
 
   $scope.formData = {};
 
-  $scope.readblog = {};
-
   $http.get('/api/blogs').success(function(data){
       $scope.blog = data;
       console.log(data);
@@ -20,7 +18,7 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
       .success(function(data) {
         $scope.formData = {};
         $scope.blogs = data;
-        $location.path('/');
+        $state.go('blogs');
         console.log(data, 'Blog created.');
       })
       .error(function(data) {
@@ -47,9 +45,10 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
     $http.get('/api/blogs/' + id)
       .success(function(data) {
         $scope.readblog = data;
-        $state.go('readblog');
-        console.log('This is the blog you selected: ', data);
+        // $state.go('blogs.readblog');
+        console.log('This is the blog you selected.', data);
       });
   };
+
 
 }]);

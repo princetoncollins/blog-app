@@ -38,10 +38,9 @@ app.config(function($routeProvider, $stateProvider, $urlRouterProvider) {
     	controller: "MainController"
     }) 
     .state('readblog', {
-    	url: "/blogs/:blog_id",
+    	url: "/readblog/:blogid",
     	templateUrl: "views/readblog.html",
     	controller: "MainController"
-    	// params: { 'id':'_id'}
     })
 
 }); //End Config. OK
