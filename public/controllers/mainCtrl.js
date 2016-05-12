@@ -6,6 +6,8 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
 
   $scope.formData = {};
 
+  $scope.blog = {};
+
   $http.get('/api/blogs').success(function(data){
       $scope.blog = data;
       console.log(data);
@@ -44,8 +46,8 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
   $scope.readPost = function(id) {
     $http.get('/api/blogs/' + id)
       .success(function(data) {
-        $scope.readblog = data;
-        // $state.go('blogs.readblog');
+        $scope.blog = data.data;
+        $state.go('readblog');
         console.log('This is the blog you selected.', data);
       });
   };

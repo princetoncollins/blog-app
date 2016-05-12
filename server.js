@@ -47,13 +47,16 @@ app.get('/api/blogs', function(req, res) {
 });
 
 // GET BLOG BY ID!
-app.get('/api/blogs/:blog_id', function(req, res) { 
-	Blog.findOne({
-		_id: req.params.blog_id
-	}, function(err, readblog) {
+app.get('/api/blogs/:blog_id', function(req, res) {
+	
+	var id = req.params.blog_id;
+
+	Blog.findById(id,   
+		function(err, blog) {
 		if (err)
 			res.send(err);
-		res.json(readblog);
+		res.json(blog);
+		console.log('Blog:', blog);
 	});
 });
 
@@ -77,6 +80,7 @@ app.post('/api/blogs', function(req, res) {
 
 // DELETE BLOG!
 app.delete('/api/blogs/:blog_id', function(req, res) {
+
 	Blog.remove({
 		_id: req.params.blog_id
 	}, function(err, blog) {
