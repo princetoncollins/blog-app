@@ -16,23 +16,57 @@ a {
 .header {
   height: 125px;
   width: 100%;
-  background: #6089be;
+  background: #afcff1;
   position: fixed;
+  z-index: 100;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
-  .header h1 {
-    color: white;
+  border-bottom: 1px solid #6089be; }
+  .header .title {
     margin: 0;
     font-family: 'Maven Pro', sans-serif;
     display: flex;
-    justify-content: center; }
-  .header div {
-    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100%; }
+  .header .nav-bar {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .header .nav-div {
+    margin: 0 auto;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 110px;
+    border-radius: 10px; }
+    .header .nav-div p, .header .nav-div i {
+      display: flex;
+      justify-content: center; }
+    .header .nav-div p {
+      margin: 0;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 13px;
+      color: white; }
+    .header .nav-div i {
+      color: white; }
+  .header .nav-div-one:hover {
+    background: white; }
+    .header .nav-div-one:hover p {
+      color: #00337a;
+      font-weight: bold; }
+    .header .nav-div-one:hover i {
+      color: #b69f66; }
+  .header .nav-div-two:hover {
+    background: white; }
+    .header .nav-div-two:hover p {
+      color: #00337a;
+      font-weight: bold; }
+    .header .nav-div-two:hover i {
+      color: #ecd05a; }
 
 h2 {
   font-family: 'Maven Pro', sans-serif;
@@ -41,31 +75,38 @@ h2 {
   margin: 0;
   padding: 10px; }
 
-h3 {
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 21px;
-  color: white; }
-
-h3:hover {
-  color: #00337a; }
-
 .wrapper {
-  padding-top: 130px;
-  height: 100%;
+  height: 48%;
   width: 100%;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 130px; }
+
+.wrapper::-webkit-scrollbar {
+  border-radius: 10px; }
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #6089be;
+  border-radius: 10px; }
+
+.wrapper::-webkit-scrollbar-track {
+  background-color: #afcff1;
+  border-radius: 10px; }
 
 .container {
   height: 200px;
-  width: 30%;
+  width: 31%;
   display: flex;
   padding: 5px;
   flex-direction: column;
   border-bottom: 2px solid #6089be;
   border-right: 2px solid #6089be;
   margin-left: 20px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  position: relative; }
   .container p {
     margin: 0;
     padding-left: 10px;
@@ -79,7 +120,7 @@ h3:hover {
     color: black;
     font-family: 'Maven Pro', sans-serif; }
   .container p:nth-child(3) {
-    color: black;
+    color: teal;
     font-family: 'Maven Pro', sans-serif; }
   .container div {
     display: -webkit-box;
@@ -97,7 +138,7 @@ h3:hover {
   box-shadow: 10px 10px 0 0 #00337a;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear; }
-  .container:hover p:first-of-type, .container:hover :nth-of-type(2), .container:hover :nth-of-type(3) {
+  .container:hover p:first-of-type, .container:hover p:nth-of-type(2), .container:hover p:nth-of-type(3) {
     color: white;
     -webkit-transition: 0.3s linear;
     transition: 0.3s linear; }
@@ -105,9 +146,30 @@ h3:hover {
 .deletePost {
   padding: 10px;
   border: 2px solid #eee;
+  background: #6089be;
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 5px; }
+
+.deletePost:hover {
+  border-color: #aaa;
   background: white;
-  color: #00337a;
-  font-family: 'Maven Pro', sans-serif; }
+  color: red;
+  font-weight: bold; }
+
+.readPost {
+  padding: 10px;
+  border: 2px solid #eee;
+  background: #6089be;
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 5px; }
+
+.readPost:hover {
+  border-color: #aaa;
+  background: white;
+  color: green;
+  font-weight: bold; }
 
 .newblog {
   display: flex;
@@ -179,3 +241,5 @@ h3:hover {
       color: #6089be;
       display: flex;
       align-self: center; }
+
+/*# sourceMappingURL=styles.css.map */

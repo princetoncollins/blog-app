@@ -56,7 +56,7 @@ app.get('/api/blogs/:blog_id', function(req, res) {
 		if (err)
 			res.send(err);
 		res.json(blog);
-		console.log('Blog:', blog);
+		console.log('Blog:', blog.title);
 	});
 });
 

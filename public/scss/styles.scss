@@ -1,5 +1,6 @@
 $blue: #6089be;
 $darkblue: #00337a;
+$lightblue: #afcff1;
 
 html {
 	height: 100%;
@@ -22,25 +23,69 @@ a {
 .header {
 	height: 125px;
 	width: 100%;
-	background: $blue;
+	background: $lightblue;
 	position: fixed;
+	z-index: 100;
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	border-bottom: 1px solid $blue;
 
-	h1 {
-		color: white;
+	.title {
 		margin: 0;
 		font-family: 'Maven Pro', sans-serif;
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		height: 100%;
 	}
-	div {
+	.nav-bar {
+		margin: 0;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
-		height: 100%;
+	}
+	.nav-div {
+		margin: 0 auto;
+		height: 75%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 110px;
+		border-radius: 10px;
+		p, i {
+			display: flex;
+			justify-content: center;
+		}
+		p {
+			margin: 0;
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 13px;
+			color: white;
+		}
+		i {
+			color: white;
+		}
+	}
+	.nav-div-one:hover {
+		background: white;
+		p {
+			color: $darkblue;
+			font-weight: bold;
+		}
+		i {
+			color: #b69f66;
+		}
+	}
+	.nav-div-two:hover {
+		background: white;
+		p {
+			color: $darkblue;
+			font-weight: bold;
+		}
+		i {
+			color: #ecd05a;
+		}
 	}
 }
 
@@ -52,27 +97,35 @@ h2 {
 	padding: 10px;
 }
 
-h3 {
-	font-family: 'Maven Pro', sans-serif;
-	font-size: 21px;
-	color: white;
-}
-
-h3:hover {
-	color: $darkblue;
-}
 
 .wrapper {
-	padding-top: 130px;
-	height: 100%;
+	height: 48%;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	overflow: scroll;
+	overflow-x: hidden;
+	position: absolute;
+	top: 130px;
+}
+
+.wrapper::-webkit-scrollbar {
+	border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+	background-color: $blue;
+	border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+	background-color: $lightblue;
+	border-radius: 10px;
 }
 
 .container {
 	height: 200px;
-	width: 30%;
+	width: 31%;
 	display: flex;
 	padding: 5px;
 	flex-direction: column;
@@ -80,6 +133,7 @@ h3:hover {
 	border-right: 2px solid $blue;
 	margin-left: 20px;
 	margin-top: 15px;
+	position: relative;
 	p {
 		margin: 0;
 		padding-left: 10px;
@@ -99,7 +153,7 @@ h3:hover {
 	}
 	//Date:
 	p:nth-child(3) {
-		color: black;
+		color: teal;
 		font-family: 'Maven Pro', sans-serif;
 	}
 	//Body:
@@ -122,7 +176,7 @@ h3:hover {
 	box-shadow: 10px 10px 0 0 $darkblue;
 	-webkit-transition: 0.2s linear;
 	transition: 0.2s linear;
-	p:first-of-type, :nth-of-type(2), :nth-of-type(3) {
+	p:first-of-type, p:nth-of-type(2), p:nth-of-type(3) {
 		color: white;
 		-webkit-transition: 0.3s linear;
 		transition: 0.3s linear;
@@ -130,11 +184,33 @@ h3:hover {
 }
 
 .deletePost {
-	padding: 10px;
-	border: 2px solid #eee;
-	background: white;
-	color: $darkblue;
-	font-family: 'Maven Pro', sans-serif;
+  padding: 10px;
+  border: 2px solid #eee;
+  background: #6089be;
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 5px;
+   }
+.deletePost:hover {
+  border-color: #aaa;
+  background: white;
+  color: red;
+  font-weight: bold;
+}
+
+.readPost {
+  padding: 10px;
+  border: 2px solid #eee;
+  background: #6089be;
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  border-radius: 5px;
+   }
+.readPost:hover {
+  border-color: #aaa;
+  background: white;
+  color: green;
+  font-weight: bold;
 }
 
 // NEW BLOG POST

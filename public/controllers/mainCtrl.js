@@ -2,11 +2,9 @@ var app = angular.module("blog-app");
 
 app.controller('MainController', ['$scope', '$http', '$location', '$stateParams', '$state', function($scope, $http, $location, $stateParams, $state) { 
 
-  $scope.apptitle = "AngularJS Blog";
-
   $scope.formData = {};
 
-  $scope.blog = {};
+  $scope.readblog = {};
 
   $http.get('/api/blogs').success(function(data){
       $scope.blog = data;
@@ -46,8 +44,8 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
   $scope.readPost = function(id) {
     $http.get('/api/blogs/' + id)
       .success(function(data) {
-        $scope.blog = data.data;
-        $state.go('readblog');
+        // $state.go('readblog');
+        // $scope.readblog = data;
         console.log('This is the blog you selected.', data);
       });
   };
