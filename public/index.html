@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="blog-app">
 
 <head>
 	<title>Blog App</title>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link href='http://fonts.googleapis.com/css?family=Raleway|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-
+	<!-- Angular -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 </head>
 
-<body ng-app="blog-app" ng-controller="MainController">
+<body ng-controller="MainController">
 
+<!-- HEADER -->
 <div class="header">
 	<div class="title">
 		<i style="color: white;" class="fa fa-magic fa-3x"></i>
 		<h1>
-			<span style="color: #00337a; margin: 0;">AngularJS</span>
-			<span style="color: white; font-size: 32px;">|</span>
+			<span style="color: #00337a;">AngularJS</span>
 			<span style="color: #00337a;">Blog</span>
 		</h1>
 	</div>
@@ -27,18 +33,20 @@
 	</div>
 </div>
 
-<ui-view>
-</ui-view>
+<!-- VIEWS -->
+<div ui-view><div>
 
 
-<!-- Angular -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
 <!-- My Scripts -->
 <script src="app.js"></script>
 <script src="controllers/mainCtrl.js"></script>
+
+<script>
+$("div.header").on("mouseover", function() {
+  $("div.header").addClass("green");
+});
+</script>
 
 </body>
 </html>

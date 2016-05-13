@@ -6,7 +6,7 @@ html {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
-	background: #f8f5d5;
+	background: white;
 }
 
 body {
@@ -23,12 +23,12 @@ a {
 .header {
 	height: 125px;
 	width: 100%;
-	background: $lightblue;
+	background: $blue;
 	position: fixed;
 	z-index: 100;
 	display: flex;
 	justify-content: space-around;
-	border-bottom: 1px solid $blue;
+	border-bottom: 1px solid $darkblue;
 
 	.title {
 		margin: 0;
@@ -51,7 +51,7 @@ a {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		width: 110px;
+		width: 100px;
 		border-radius: 10px;
 		p, i {
 			display: flex;
@@ -60,12 +60,14 @@ a {
 		p {
 			margin: 0;
 			font-family: 'Maven Pro', sans-serif;
-			font-size: 13px;
+			font-size: 15px;
 			color: white;
 		}
 		i {
 			color: white;
 		}
+		-webkit-transition: 0.1s linear;
+		transition: 0.1s linear;
 	}
 	.nav-div-one:hover {
 		background: white;
@@ -75,6 +77,7 @@ a {
 		}
 		i {
 			color: #b69f66;
+			shadow: 3px 3px 1px 1px;
 		}
 	}
 	.nav-div-two:hover {
@@ -89,23 +92,14 @@ a {
 	}
 }
 
-h2 {
-	font-family: 'Maven Pro', sans-serif;
-	display: flex;
-	justify-content: center;
-	margin: 0;
-	padding: 10px;
-}
-
-
 .wrapper {
-	height: 48%;
+	height: 465px;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
 	overflow-x: hidden;
-	position: absolute;
+	position: relative;
 	top: 130px;
 }
 
@@ -123,7 +117,7 @@ h2 {
 	border-radius: 10px;
 }
 
-.container {
+.blog-container {
 	height: 200px;
 	width: 31%;
 	display: flex;
@@ -170,7 +164,7 @@ h2 {
 	}
 }
 
-.container:hover {
+.blog-container:hover {
 	background: $blue;
 	color: white;
 	box-shadow: 10px 10px 0 0 $darkblue;
@@ -183,7 +177,7 @@ h2 {
 	}
 }
 
-.deletePost {
+#deletePost {
   padding: 10px;
   border: 2px solid #eee;
   background: #6089be;
@@ -191,14 +185,14 @@ h2 {
   font-family: 'Maven Pro', sans-serif;
   border-radius: 5px;
    }
-.deletePost:hover {
+#deletePost:hover {
   border-color: #aaa;
   background: white;
   color: red;
   font-weight: bold;
 }
 
-.readPost {
+#readPost {
   padding: 10px;
   border: 2px solid #eee;
   background: #6089be;
@@ -206,7 +200,7 @@ h2 {
   font-family: 'Maven Pro', sans-serif;
   border-radius: 5px;
    }
-.readPost:hover {
+#readPost:hover {
   border-color: #aaa;
   background: white;
   color: green;
@@ -220,6 +214,7 @@ h2 {
 	justify-content: center;
 	height: 100%;
 	width: 100%;
+	position: absolute;
 	form {
 		height: 100%;
 		width: 55%;
@@ -295,6 +290,49 @@ h2 {
 			color: $blue;
 			display: flex;
 			align-self: center;
+		}
+	}
+}
+
+// READ BLOG.
+
+.readblog-wrapper {
+	z-index: 100;
+	position: relative;
+	top: 130px;
+	height: 465px;
+	width: 100%;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	background: $lightblue;
+	.readblog-container {
+		background: #eee;
+		margin: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		width: 75%;
+		h1 {
+			margin: 0;
+			font-family: 'Raleway', sans-serif;
+			font-size: 72px;
+			color: $darkblue;
+		}
+		h2 {
+			margin: 0;
+			font-family: 'Raleway', sans-serif;
+			font-size: 25px;
+		}
+		h3 {
+			margin: 0;
+			font-size: 25px;	
+			font-family: 'Raleway', sans-serif;
+			color: $blue;
+		}
+		p {
+			margin: 0;
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 18px;
 		}
 	}
 }

@@ -1,6 +1,8 @@
-<div style="padding-top: 150px">
-<h2>Title: {{ readblog.title }}</h2>
-<h2>Author: {{ readblog.author }}</h2>
-<h2>Date: {{ readblog.pubdate }}</h2>
-<h2>Body: {{ readblog.body }}</h2>
+<div class="readblog-wrapper">
+	<div class="readblog-container" ng-show="readblog">
+		<h1>{{ readblog.title }}</h1>
+		<h2>&nbsp;&nbsp;by {{ readblog.author }}</h2>
+		<h3>&nbsp;&nbsp;{{ readblog.pubdate | date}}</h2><br><hr><br>
+		<p>{{ readblog.body }}</p>
+	</div>
 </div>

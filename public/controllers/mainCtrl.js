@@ -4,14 +4,20 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
 
   $scope.formData = {};
 
-  $scope.readblog = {};
-
   $http.get('/api/blogs').success(function(data){
       $scope.blog = data;
       console.log(data);
     }).error(function(data) {
       console.log('Error: ' + data);
     });
+
+  $scope.readPost = function(id) {
+    $http.get('/api/blogs/' + id)
+    .success(function(data) {
+        $scope.readblog = data;
+        console.log('This is the blog you selected.', data);
+      });
+  };
 
   $scope.addPost = function() {
     $http.post('/api/blogs', $scope.formData)
@@ -41,14 +47,6 @@ app.controller('MainController', ['$scope', '$http', '$location', '$stateParams'
       });
   };
 
-  $scope.readPost = function(id) {
-    $http.get('/api/blogs/' + id)
-      .success(function(data) {
-        // $state.go('readblog');
-        // $scope.readblog = data;
-        console.log('This is the blog you selected.', data);
-      });
-  };
 
 
 }]);

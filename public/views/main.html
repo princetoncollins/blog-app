@@ -1,19 +1,21 @@
-
-	<div class="wrapper"> 
-		<div class="container" ng-repeat="post in blog">  
-			<p><i class="fa fa-book"></i>&nbsp;{{ post.title }}</p>
-	   		<p>by {{ post.author}}</p> 
-	   		<p>{{ post.pubdate | date }}</p>
-	   		<br>
-			<div>
-				<p>{{ post.body }}</p>
-	      	</div>
-	      	<br><br>
-	      	<div style="position: absolute; bottom: 10px; right: 10px;">
-	   			<button class="deletePost" ng-click="deletePost(post._id)">Delete Blog</button>
-	   			<button class="readPost" ng-click="readPost(post._id)">Read Blog</button>
-	   		</div>
-		</div>
+<div class="wrapper"> 
+	<div class="blog-container" ng-repeat="post in blog">  
+		<p><i class="fa fa-book"></i>&nbsp;{{ post.title }}</p>
+   		<p>by {{ post.author }}</p> 
+   		<p>{{ post.pubdate | date }}</p>
+   		<br>
+		<div>
+			<p>{{ post.body }}</p>
+      	</div>
+      	<br><br>
+      	<div style="position: absolute; bottom: 10px; right: 10px;">
+   			<button id="deletePost" ng-click="deletePost(post._id)">Delete Blog</button>
+   			<button id="readPost" ng-click="readPost(post._id)" ui-sref=".readblog">Read Blog</button>
+   		</div>
 	</div>
+</div>
+
+<div ui-view></div>
+
 
 
