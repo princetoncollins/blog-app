@@ -8,19 +8,19 @@ body {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: white; }
+  background: white;
+  overflow-x: hidden; }
 
 a {
   text-decoration: none; }
 
 .header {
-  height: 125px;
+  height: 50px;
   width: 100%;
   background: #6089be;
   position: fixed;
   z-index: 100;
   display: flex;
-  justify-content: space-around;
   border-bottom: 1px solid #00337a; }
   .header .title {
     margin: 0;
@@ -28,30 +28,37 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; }
+    height: 100%;
+    color: white;
+    padding-left: 10px; }
   .header .nav-bar {
     margin: 0;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    position: absolute;
+    left: 87%; }
   .header .nav-div {
     margin: 0 auto;
-    height: 75%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    width: 100px;
-    border-radius: 10px;
+    align-items: center;
+    width: 60px;
     -webkit-transition: 0.1s linear;
     transition: 0.1s linear; }
-    .header .nav-div p, .header .nav-div i {
+    .header .nav-div a {
+      width: 100%;
+      height: 100%; }
+    .header .nav-div p, .header .nav-div i, .header .nav-div a {
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      align-items: center; }
     .header .nav-div p {
       margin: 0;
       font-family: 'Maven Pro', sans-serif;
-      font-size: 15px;
+      font-size: 11px;
       color: white; }
     .header .nav-div i {
       color: white; }
@@ -72,36 +79,35 @@ a {
       color: #ecd05a; }
 
 .wrapper {
-  height: 465px;
-  width: 100%;
+  height: 94.7%;
+  width: 25%;
   display: flex;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
-  position: relative;
-  top: 130px; }
+  position: absolute;
+  top: 51px; }
 
 .wrapper::-webkit-scrollbar {
   border-radius: 10px; }
 
 .wrapper::-webkit-scrollbar-thumb {
-  background-color: #6089be;
-  border-radius: 10px; }
+  background-color: #6089be; }
 
 .wrapper::-webkit-scrollbar-track {
-  background-color: #afcff1;
-  border-radius: 10px; }
+  background-color: #ccc; }
 
 .blog-container {
   height: 200px;
-  width: 31%;
+  width: 100%;
   display: flex;
   padding: 5px;
   flex-direction: column;
   border-bottom: 2px solid #6089be;
   border-right: 2px solid #6089be;
-  margin-left: 20px;
-  margin-top: 15px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 6px;
   position: relative; }
   .blog-container p {
     margin: 0;
@@ -131,7 +137,7 @@ a {
 .blog-container:hover {
   background: #6089be;
   color: white;
-  box-shadow: 10px 10px 0 0 #00337a;
+  box-shadow: 3px 3px 0 0 #00337a;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear; }
   .blog-container:hover p:first-of-type, .blog-container:hover p:nth-of-type(2), .blog-container:hover p:nth-of-type(3) {
@@ -151,7 +157,9 @@ a {
   border-color: #aaa;
   background: white;
   color: red;
-  font-weight: bold; }
+  font-weight: bold;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out; }
 
 #readPost {
   padding: 10px;
@@ -165,7 +173,9 @@ a {
   border-color: #aaa;
   background: white;
   color: green;
-  font-weight: bold; }
+  font-weight: bold;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out; }
 
 .newblog {
   display: flex;
@@ -240,38 +250,95 @@ a {
       align-self: center; }
 
 .readblog-wrapper {
-  z-index: 100;
-  position: relative;
-  top: 130px;
-  height: 465px;
-  width: 100%;
+  z-index: 99;
+  position: absolute;
+  top: 51px;
+  left: 25%;
+  height: 94.7%;
+  width: 75%;
   display: flex;
   margin: 0;
   justify-content: center;
   background: #afcff1; }
   .readblog-wrapper .readblog-container {
+    position: relative;
     background: #eee;
     margin: 20px;
     padding: 20px;
-    border-radius: 10px;
-    width: 75%; }
+    width: 90%;
+    -webkit-transition: 1s ease-out; }
     .readblog-wrapper .readblog-container h1 {
       margin: 0;
       font-family: 'Raleway', sans-serif;
-      font-size: 72px;
+      font-size: 50px;
       color: #00337a; }
     .readblog-wrapper .readblog-container h2 {
       margin: 0;
       font-family: 'Raleway', sans-serif;
-      font-size: 25px; }
+      font-size: 18px; }
     .readblog-wrapper .readblog-container h3 {
       margin: 0;
-      font-size: 25px;
+      font-size: 16px;
       font-family: 'Raleway', sans-serif;
       color: #6089be; }
     .readblog-wrapper .readblog-container p {
       margin: 0;
       font-family: 'Maven Pro', sans-serif;
       font-size: 18px; }
+    .readblog-wrapper .readblog-container #editPost {
+      padding: 30px;
+      background: #6089be;
+      color: white;
+      font-family: 'Maven Pro', sans-serif;
+      font-size: 19px;
+      font-weight: bold;
+      border-radius: 5px;
+      position: absolute;
+      top: 10px;
+      right: 10px; }
+      .readblog-wrapper .readblog-container #editPost a {
+        height: 100%;
+        width: 100%; }
+    .readblog-wrapper .readblog-container #editPost:hover {
+      color: #00337a;
+      font-weight: bold;
+      font-size: 19px; }
+
+.home {
+  position: absolute;
+  top: 51px;
+  left: 25%;
+  height: 94.7%;
+  width: 75%;
+  display: flex;
+  margin: 0;
+  justify-content: center; }
+  .home h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #6089be;
+    align-self: center;
+    position: relative;
+    bottom: 70px; }
+
+.main-fade.ng-enter {
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
+  opacity: 0; }
+
+.main-fade.ng-enter-active {
+  opacity: 1; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fade-in {
+  -webkit-animation: fadeIn 1s; }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=styles.css.map */

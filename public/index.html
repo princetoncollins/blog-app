@@ -12,6 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
 	<!-- jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 </head>
@@ -21,32 +22,25 @@
 <!-- HEADER -->
 <div class="header">
 	<div class="title">
-		<i style="color: white;" class="fa fa-magic fa-3x"></i>
-		<h1>
-			<span style="color: #00337a;">AngularJS</span>
-			<span style="color: #00337a;">Blog</span>
-		</h1>
+		<i style="color: white;" class="fa fa-magic fa-2x"></i>&nbsp;
+		<h3>
+			<span>AngularJS Blog</span>
+		</h3>
 	</div>
 	<div class="nav-bar">
-		<a ui-sref="blogs"><div class="nav-div nav-div-one"><i class="fa fa-archive fa-3x"></i><p>Blogs</p></a></div>
-		<a ui-sref="newblog"><div class="nav-div nav-div-two"><i class="fa fa-pencil fa-3x"></i><p>Write Blog</p></a></div>
+		<div class="nav-div nav-div-one"><a ui-sref="blogs"><i class="fa fa-archive fa-2x"></i></a></div>
+		<div class="nav-div nav-div-two"><a ui-sref="newblog"><i class="fa fa-pencil fa-2x"></i></a></div>
 	</div>
 </div>
 
 <!-- VIEWS -->
-<div ui-view><div>
+<div ui-view class="main-fade"><div>
 
 
 
 <!-- My Scripts -->
 <script src="app.js"></script>
 <script src="controllers/mainCtrl.js"></script>
-
-<script>
-$("div.header").on("mouseover", function() {
-  $("div.header").addClass("green");
-});
-</script>
 
 </body>
 </html>
