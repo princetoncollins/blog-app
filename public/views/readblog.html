@@ -4,6 +4,9 @@
 		<h2>&nbsp;&nbsp;by {{ readblog.author }}</h2>
 		<h3>&nbsp;&nbsp;{{ readblog.pubdate | date}}</h2><br><hr><br>
 		<p>{{ readblog.body }}</p><br><hr>
-		<div id="editPost"><a ui-sref="#">EDIT</a></div>
+		<div class="button-container">
+			<div id="button"><a ui-sref="#">EDIT</a></div>
+			<div id="button"><a ui-sref="blogs">HOME</a></div>
+		</div>
 	</div>
 </div>

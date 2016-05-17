@@ -1,27 +1,29 @@
-var app = angular.module('blog-app', ['ngRoute', 'ui.router', 'ngAnimate']);
+var app = angular.module('blog-app', ['ui.router', 'ngAnimate']);
 
-app.config(function($routeProvider, $stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
 
- 	$urlRouterProvider.otherwise('/home');
+ 	$urlRouterProvider.otherwise('/blogs');
 
     $stateProvider
 
     .state('blogs', {
     	url: '/blogs',
-    	templateUrl: 'views/main.html',
-    	controller: 'MainController'
+    	views: {
+    		'': {
+    			templateUrl: 'views/main.html',
+    			controller: 'MainController'
+    		},
+    		'mainContent@blogs': {
+    			templateUrl: 'views/home.html',
+    			controller: 'MainController'
+    		}
+    	}
     })
 
     .state('blogs.readblog', {
     	url: "/readblog",
-    	templateUrl: "views/readblog.html",
-    	controller: "MainController"
-    })
-
-    .state('blogs.home', {
-    	url: "/home",
-    	templateUrl: 'views/home.html',
-    	MainController: "MainController"
+    	templateUrl: 'views/readblog.html',
+    	controller: 'MainController'
     })
 
     .state('newblog', {
