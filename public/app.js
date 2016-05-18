@@ -22,9 +22,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('blogs.readblog', {
     	url: "/readblog",
-    	templateUrl: 'views/readblog.html',
-    	controller: 'MainController'
+    	views: {
+    		'mainContent@blogs': {
+    			templateUrl: 'views/readblog.html',
+    			controller: 'MainController'
+    		}
+    	}
     })
+
+    // .state('blogs.newblog', {
+    // 	url: '/newblog',
+    // 	views: {
+    // 		'mainContent@blogs': {
+    // 			templateUrl: "views/newblog.html",
+    // 			controller: "MainController"
+   	// 		}
+   	// 	}
+    // }); 
 
     .state('newblog', {
     	url: '/newblog',

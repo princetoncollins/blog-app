@@ -98,7 +98,7 @@ a {
   background-color: #ccc; }
 
 .blog-container {
-  height: 200px;
+  height: 212px;
   width: 100%;
   display: flex;
   padding: 5px;
@@ -116,21 +116,23 @@ a {
   .blog-container p:first-child {
     color: #6089be;
     font-family: 'Maven Pro', sans-serif;
-    font-size: 23px; }
+    font-size: 18px; }
   .blog-container p:nth-child(2) {
     font-weight: bold;
     color: black;
-    font-family: 'Maven Pro', sans-serif; }
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 14px; }
   .blog-container p:nth-child(3) {
     color: teal;
-    font-family: 'Maven Pro', sans-serif; }
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 14px; }
   .blog-container div {
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden; }
     .blog-container div p:first-child {
-      font-size: 16px;
+      font-size: 13px;
       color: #555;
       font-family: 'Maven Pro', sans-serif; }
 
@@ -185,7 +187,7 @@ a {
   position: absolute; }
   .newblog form {
     height: 100%;
-    width: 55%;
+    width: 45%;
     display: flex;
     justify-content: center;
     flex-direction: column; }
@@ -235,15 +237,15 @@ a {
       font-family: 'Maven Pro', sans-serif;
       font-size: 18px;
       font-weight: bold;
-      color: #00337a;
-      background: #ddd;
+      color: #6089be;
+      background: white;
       border: 2px solid #00337a;
-      border-radius: 3px;
-      width: 50%;
+      border-radius: 20px;
+      width: 25%;
       align-self: center; }
     .newblog form button:hover {
       color: white;
-      background: #00337a; }
+      background: #6089be; }
     .newblog form i {
       color: #6089be;
       display: flex;
@@ -266,25 +268,56 @@ a {
     margin: 20px;
     padding: 20px;
     width: 90%;
+    border-radius: 5px;
     -webkit-transition: 1s ease-out; }
-    .readblog-wrapper .readblog-container h1 {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      font-size: 50px;
-      color: #00337a; }
-    .readblog-wrapper .readblog-container h2 {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px; }
-    .readblog-wrapper .readblog-container h3 {
-      margin: 0;
-      font-size: 16px;
-      font-family: 'Raleway', sans-serif;
-      color: #6089be; }
-    .readblog-wrapper .readblog-container p {
-      margin: 0;
-      font-family: 'Maven Pro', sans-serif;
-      font-size: 18px; }
+    .readblog-wrapper .readblog-container .date-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+      float: left;
+      background-color: #6089be;
+      padding-right: 10px; }
+      .readblog-wrapper .readblog-container .date-box h3 {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        font-size: 25px;
+        color: white;
+        display: flex;
+        text-align: center; }
+    .readblog-wrapper .readblog-container .title-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 65%;
+      height: 100px;
+      padding-left: 20px;
+      border-left: 1px solid #6089be; }
+      .readblog-wrapper .readblog-container .title-box h1 {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        font-size: 30px;
+        color: #6089be;
+        border-left: 2px solid #6089be;
+        padding-left: 20px; }
+      .readblog-wrapper .readblog-container .title-box h2 {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        border-left: 2px solid #6089be;
+        padding-left: 20px; }
+    .readblog-wrapper .readblog-container .body-box {
+      background: white;
+      border-radius: 5px;
+      padding: 10px; }
+      .readblog-wrapper .readblog-container .body-box p {
+        margin-left: 20px;
+        font-family: 'Maven Pro', sans-serif;
+        font-size: 18px;
+        color: #666; }
     .readblog-wrapper .readblog-container .button-container {
       position: absolute;
       top: 10px;
@@ -341,14 +374,37 @@ a {
   0% {
     opacity: 0;
     position: absolute;
-    top: 0%;
-    left: 15.6%;
+    top: -50%;
     width: 75%; }
   100% {
     opacity: 1;
     position: absolute;
-    top: 47.3%;
-    left: 15.6%;
+    top: 5.2%;
     width: 75%; } }
+.fade-in {
+  -webkit-animation: fadeIn 1s; }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.toast {
+  width: 200px;
+  height: 20px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  bottom: 10px;
+  background-color: #383838;
+  color: #F0F0F0;
+  font-family: Calibri;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 24px -1px #383838;
+  -moz-box-shadow: 0px 0px 24px -1px #383838;
+  box-shadow: 0px 0px 24px -1px #383838; }
 
 /*# sourceMappingURL=styles.css.map */

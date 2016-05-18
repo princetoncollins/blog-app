@@ -1,9 +1,16 @@
-<div class="readblog-wrapper">
+<div class="readblog-wrapper fade-in">
 	<div class="readblog-container" ng-show="readblog">
-		<h1>{{ readblog.title }}</h1>
-		<h2>&nbsp;&nbsp;by {{ readblog.author }}</h2>
-		<h3>&nbsp;&nbsp;{{ readblog.pubdate | date}}</h2><br><hr><br>
-		<p>{{ readblog.body }}</p><br><hr>
+
+		<div class="date-box">
+			<h3>&nbsp;{{ readblog.pubdate | date}}</h3>
+		</div>
+		<div class="title-box">
+			<h1>{{ readblog.title }}</h1>
+			<h2>&nbsp;by {{ readblog.author }}</h2>
+		</div><br><br>
+		<div class="body-box">
+			<p>{{ readblog.body }}</p>
+		</div>
 		<div class="button-container">
 			<div id="button"><a ui-sref="#">EDIT</a></div>
 			<div id="button"><a ui-sref="blogs">HOME</a></div>
