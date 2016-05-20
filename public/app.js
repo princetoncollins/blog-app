@@ -13,10 +13,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     			templateUrl: 'views/main.html',
     			controller: 'MainController'
     		},
-    		'mainContent@blogs': {
+       		'mainContent@blogs': {
     			templateUrl: 'views/home.html',
     			controller: 'MainController'
     		}
+	    	// 'newBlog@blogs': {
+		    // 	templateUrl: "views/menu.html",
+		    // 	controller: "MainController"
+		    // }
     	}
     })
 
@@ -30,20 +34,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     	}
     })
 
-    // .state('blogs.newblog', {
-    // 	url: '/newblog',
-    // 	views: {
-    // 		'mainContent@blogs': {
-    // 			templateUrl: "views/newblog.html",
-    // 			controller: "MainController"
-   	// 		}
-   	// 	}
-    // }); 
-
-    .state('newblog', {
-    	url: '/newblog',
-    	templateUrl: "views/newblog.html",
-    	controller: "MainController"
-    }); 
+    .state('blogs.newblog', {
+    	url: "/newblog",
+    	views: {
+    		'newBlog@blogs': {
+    			templateUrl: 'views/newblog.html',
+    			controller: 'MainController'
+    		}
+    	}
+    });
 
 }); //End Config. OK

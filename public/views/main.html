@@ -1,6 +1,6 @@
 <div class="wrapper"> 
 	<div class="blog-container" ng-repeat="post in blog" ng-click="readPost(post._id)" ui-sref=".readblog">  
-		<p><i class="fa fa-book"></i>&nbsp;{{ post.title }}</p>
+		<p><i class="fa fa-sticky-note"></i>&nbsp;<b>{{ post.title }}</b></p>
    		<p>by {{ post.author }}</p> 
    		<p>{{ post.pubdate | date }}</p>
    		<br>
@@ -8,14 +8,14 @@
 			<p>{{ post.body }}</p>
       	</div>
       	<br><br>
-      	<div style="position: absolute; bottom: 10px; right: 10px;">
-   			<button id="deletePost" ng-click="deletePost(post._id)">Delete Blog</button>
-   			<button id="readPost" ng-click="readPost(post._id)" ui-sref=".readblog">Read Blog</button>
+      	<div class="button-box">
+   			<div id="deletePost" ng-click="deletePost(post._id)"><i class="fa fa-trash-o fa-2x"></i></div>
    		</div>
 	</div>
 </div>
 
 <ui-view name="mainContent" class="main-fade"></ui-view>
+<ui-view name="newBlog" class="writeblog"></ui-view>
 
 
 

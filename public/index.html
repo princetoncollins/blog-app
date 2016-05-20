@@ -22,16 +22,14 @@
 <!-- HEADER -->
 <div class="header">
 	<div class="title">
-		<i style="color: white;" class="fa fa-magic fa-2x"></i>&nbsp;
+		<i style="color: #d3f3dd;" class="fa fa-skyatlas fa-2x"></i>&nbsp;
 		<h3>
 			<span>AngularJS Blog</span>
 		</h3>
 	</div>
 	<div class="nav-bar">
-		<div class="nav-div nav-div-one"><a ui-sref="blogs"><i class="fa fa-archive fa-2x"></i></a></div>
-		<div class="nav-div nav-div-two"><a ui-sref="newblog"><i class="fa fa-pencil fa-2x"></i></a></div>
+		<div class="nav-div"><a ui-sref="blogs"><i class="fa fa-archive fa-2x"></i></a></div>
 	</div>
-	<div class='toast' style='display:none'>Blog Created!</div>
 </div>
 
 <!-- VIEWS -->
@@ -42,12 +40,6 @@
 <!-- My Scripts -->
 <script src="app.js"></script>
 <script src="controllers/mainCtrl.js"></script>
-
-<script>
-  $('button').click(function () {
-    $('.toast').stop().fadeIn(400).delay(3000).fadeOut(400); 
-});
-</script>
 
 </body>
 </html>

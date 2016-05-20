@@ -27,6 +27,7 @@
     "mongoose": "^4.4.13",
     "path": "^0.12.7",
     "nodemon": "~1.9.2",
-    "angular-ui-router": "~0.2.18"
+    "angular-ui-router": "~0.2.18",
+    "mongojs": "~2.4.0"
   }
 }

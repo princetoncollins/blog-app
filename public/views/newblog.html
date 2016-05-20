@@ -3,12 +3,12 @@
       <form>
             <i class="fa fa-pencil-square-o fa-5x"></i><br>
 
-            <input class="blogtitle" type="text" ng-model="formData.title" placeholder="Blog Title" /><br>
+            <input class="blogtitle" type="text" ng-model="formData.title" placeholder="Blog Title" required /><br>
            
-            <textarea ng-model="formData.body" rows="15" placeholder="Write the body of your blog here."></textarea><br>
+            <textarea ng-model="formData.body" rows="15" placeholder="Write the body of your blog here." required></textarea><br>
            
             <label for="">by:</label><br>
-            <input class="blogauthor" type="text" ng-model="formData.author" placeholder="Author Name" /><br><br>
+            <input class="blogauthor" type="text" ng-model="formData.author" placeholder="Author Name" required /><br><br>
             
             <button type="submit" ng-click="addPost()">Submit</button>
 
