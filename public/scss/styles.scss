@@ -33,7 +33,7 @@ a {
 	width: 62.50%;
 	background: #fff;
 	position: fixed;
-	z-index: 100;
+	z-index: 200;
 	display: flex;
 	border-bottom: 1px solid #ddd;
 	border-right: 1px solid #ddd;
@@ -92,14 +92,15 @@ a {
 
 
 .wrapper {
-	height: 94.8%;
+	height: 94.7%;
 	width: 15%;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
 	overflow-x: hidden;
 	position: absolute;
-	top: 5%;
+	top: 5.3%;
+	cursor: pointer;
 }
 
 .wrapper::-webkit-scrollbar {
@@ -108,10 +109,12 @@ a {
 
 .wrapper::-webkit-scrollbar-thumb {
 	background-color: $darkgreen;
+	border-radius: 20px;
 }
 
 .wrapper::-webkit-scrollbar-track {
 	background-color: $lightgreen;
+	border-radius: 20px;
 }
 
 .blog-container {
@@ -200,10 +203,10 @@ a {
 	border-left: 1px solid #ddd;
 	background: $verylightgreen;
 	height: 94.7%;
-	width: 47.5%;
+	width: 47.45%;
 	position: absolute;
-	top: 5.1%;
-	left: 27.5%;
+	top: 5.3%;
+	left: 27.55%;
 	z-index: 150;
 	form {
 		height: 100%;
@@ -266,6 +269,7 @@ a {
 			border-radius: 20px;
 			width: 40%;
 			align-self: center;
+			cursor: pointer;
 		}
 		button:hover {
 			color: white;
@@ -285,7 +289,7 @@ a {
 	z-index: 99;
 	position: absolute;
 	top: 5%;
-	left: 27.5%;
+	left: 27.55%;
 	height: 94.8%;
 	width: 47.5%;
 	display: flex;
@@ -295,7 +299,7 @@ a {
 	border-right: 1px solid #ddd;
 	.readblog-container {
 		position: relative;
-		background: $verylightgreen;
+		background: $lightgreen;
 		margin: 20px;
 		padding: 20px;
 		width: 90%;
@@ -365,29 +369,29 @@ a {
 			top: 10px;
 			right: 10px;
 			display: flex;
+			justify-content: center;
 			
-			#button {
-			  padding: 20px;
-			  background: $green;
-			  color: white;
-			  font-family: 'Maven Pro', sans-serif;
-			  font-size: 15px;
-			  font-weight: bold;
-			  border-radius: 5px;
-			  margin: 5px;
-			  width: 50px;
 			  a {
-			  	display: flex;
-			  	justify-content: center;
-			  	align-self: center;
 			  	height: 100%;
 			  	width: 100%;
 			  	color: white;
-			  }
-			}
-			#button a:hover {
-			  color: $neongreen;
-			  font-weight: bold;
+				#button {
+				  display: flex;
+				  justify-content: center;
+				  padding: 20px;
+				  background: $green;
+				  color: white;
+				  font-family: 'Maven Pro', sans-serif;
+				  font-size: 15px;
+				  font-weight: bold;
+				  border-radius: 5px;
+				  margin: 5px;
+				  width: 50px;
+				}
+				#button:hover {
+				  color: $neongreen;
+				  font-weight: bold;
+				}
 			}
 		}
 	}
@@ -479,14 +483,14 @@ a {
 
 .writeblog.ng-enter {
 	.newblog {
-		transition: right 1s ease-out;
-		right: -75%;
+		transition: bottom 1s ease-out;
+		bottom: -100%;
 	}
 }
 
 .writeblog.ng-active {
 	.newblog {
-		transition: right 1s ease-out;
-		right: 0%;
+		transition: bottom 1s ease-out;
+		bottom: 0%;
 	}
 }
