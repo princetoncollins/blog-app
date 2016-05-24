@@ -2,7 +2,8 @@ html {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: white; }
+  background: white;
+  overflow: hidden; }
 
 body {
   height: 100%;
@@ -95,6 +96,7 @@ a {
   padding: 10px;
   flex-direction: column;
   border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   position: relative; }
   .blog-container p {
     margin: 0;
@@ -143,6 +145,7 @@ a {
   background: #99ffa0;
   color: white;
   border-bottom: 1px solid #17bf44;
+  border-right: 1px solid #17bf44;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear; }
   .blog-container:hover p:first-of-type, .blog-container:hover p:nth-of-type(2), .blog-container:hover p:nth-of-type(3) {
@@ -154,13 +157,20 @@ a {
   display: flex;
   justify-content: center;
   border-left: 1px solid #ddd;
-  background: #d3f3dd;
+  background: white;
   height: 94.7%;
   width: 47.45%;
   position: absolute;
   top: 5.3%;
   left: 27.55%;
-  z-index: 150; }
+  z-index: 150;
+  border-right: 1px solid #ddd; }
+  .newblog .exit {
+    color: #99ffa0;
+    padding: 5px;
+    position: absolute;
+    right: 0.5%;
+    z-index: 151; }
   .newblog form {
     height: 100%;
     width: 70%;
@@ -178,7 +188,7 @@ a {
       border-radius: 3px;
       color: #17762c;
       padding: 10px;
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 30px; }
     .newblog form input.blogauthor {
       border: 2px solid #99ffa0;
@@ -186,7 +196,7 @@ a {
       border-radius: 3px;
       color: #17762c;
       padding: 10px;
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 20px; }
     .newblog form input:hover {
       -webkit-transition: 0.5s all;
@@ -199,7 +209,7 @@ a {
       border-radius: 3px;
       color: #333;
       padding: 10px;
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 15px; }
     .newblog form textarea:hover {
       -webkit-transition: 0.5s all;
@@ -346,6 +356,12 @@ a {
     height: 50px;
     border-left: 1px solid #eee;
     border-bottom: 1px solid #eee; }
+    .home .pencil a {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     .home .pencil i {
       color: #99ffa0; }
   .home .pencil:hover {
@@ -356,15 +372,18 @@ a {
 
 .main-fade.ng-enter {
   -webkit-transition: 0.6s ease-out;
-  transition: 0.5s ease-out;
+  transition: 0.6s ease-out;
   opacity: 0; }
 
 .main-fade.ng-enter-active {
   opacity: 1; }
 
 .main-fade.ng-leave {
-  -webkit-transition: 0.6s ease-out;
-  transition: 0.5s ease-out;
+  opacity: 1; }
+
+.main-fade.ng-leave-active {
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
   opacity: 0; }
 
 .slide-in {
@@ -383,12 +402,44 @@ a {
     opacity: 0; }
   100% {
     opacity: 1; } }
-.writeblog.ng-enter .newblog {
-  transition: bottom 1s ease-out;
-  bottom: -100%; }
+.form {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 5%; }
 
-.writeblog.ng-active .newblog {
-  transition: bottom 1s ease-out;
-  bottom: 0%; }
+.writeblog.ng-enter {
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
+  opacity: 0; }
+  .writeblog.ng-enter .form {
+    position: relative;
+    bottom: -47.4%; }
+
+.writeblog.ng-enter-active {
+  opacity: 1; }
+  .writeblog.ng-enter-active .form {
+    -webkit-transition: 0.6s ease-out;
+    transition: 0.6s ease-out;
+    position: relative;
+    bottom: 5%; }
+
+.writeblog.ng-leave {
+  -webkit-transition: 0.8s ease-out;
+  transition: 0.8s ease-out;
+  opacity: 1; }
+  .writeblog.ng-leave .form {
+    position: relative;
+    bottom: 5%; }
+
+.writeblog.ng-leave-active {
+  opacity: 0; }
+  .writeblog.ng-leave-active .form {
+    -webkit-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+    position: relative;
+    bottom: -90%; }
 
 /*# sourceMappingURL=styles.css.map */

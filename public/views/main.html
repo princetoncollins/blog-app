@@ -1,21 +1,21 @@
 <div class="wrapper"> 
-	<div class="blog-container" ng-repeat="post in blog" ng-click="readPost(post._id)" ui-sref=".readblog">  
-		<p><i class="fa fa-sticky-note"></i>&nbsp;<b>{{ post.title }}</b></p>
-   		<p>by {{ post.author }}</p> 
-   		<p>{{ post.pubdate | date }}</p>
+	<div class="blog-container" ng-repeat="data in blog | orderBy: '-pubdate'" ng-click="readPost(data._id)" ui-sref=".readblog">  
+		<p><i class="fa fa-sticky-note"></i>&nbsp;<b>{{ data.title }}</b></p>
+   		<p>by {{ data.author }}</p> 
+   		<p>{{ data.pubdate | date }}</p>
    		<br>
 		<div>
-			<p>{{ post.body }}</p>
+			<p>{{ data.body }}</p>
       	</div>
       	<br><br>
       	<div class="button-box">
-   			<div id="deletePost" ng-click="deletePost(post._id)"><i class="fa fa-trash-o fa-2x"></i></div>
+   			<div id="deletePost" ng-click="deletePost(data._id)"><i class="fa fa-trash-o fa-2x"></i></div>
    		</div>
 	</div>
 </div>
 
 <ui-view name="mainContent" class="main-fade"></ui-view>
-<ui-view name="newBlog" class="writeblog"></ui-view>
+
 
 
 

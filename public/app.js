@@ -17,10 +17,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     			templateUrl: 'views/home.html',
     			controller: 'MainController'
     		}
-	    	// 'newBlog@blogs': {
-		    // 	templateUrl: "views/menu.html",
-		    // 	controller: "MainController"
-		    // }
     	}
     })
 
