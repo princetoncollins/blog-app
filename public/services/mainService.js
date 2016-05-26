@@ -1,59 +1,33 @@
-var app = angular.module("blog-app", []);
+var app = angular.module("blog-app");
 
 app.service('mainService', function($http, $q) {
 
 	var blog = [];
+	var readblog = {};
+	var formData = {};
 
-  	$http.get('/api/blogs').success(function(data, status, headers){
-  		angular.copy(data, blog);
-    })
+	this.getPosts = function() {
+		return $http.get('/api/blogs').then(function(response){
+  	  		blog = response.data;
+  	  		return blog;
+    	});
+	}
 
-    return {
-    	blog: blog.data
-    }
+	this.readPost = function(id) {
+		return $http.get('/api/blogs/' + id).then(function(response) {
+	    	readblog = response.data;
+	    	return readblog;
+	  });
+	};
 
-  // this.getPosts = function() {
-  // 	$http.get('/api/blogs').success(function(data){
-  //     console.log(data);
-  //     return data;
-  //   }).error(function(data) {
-  //     console.log('Error: ' + data);
-  //   });
-  // };
+	this.addPost = function(formData) {
+		return $http.post('/api/blogs', formData);
+	};
 
-  // this.readPost = function(id) {
-  //   $http.get('/api/blogs/' + id)
-  //   .success(function(data) {
-  //       $scope.readblog = data;
-  //       console.log('This is the blog you selected.', data);
-  //     });
-  // };
+	this.deletePost = function(id) {
+		return $http.delete('/api/blogs/' + id).then(function(response) {
+	    	blog = response.data;
+	  });
+	};
 
-  // this.addPost = function() {
-  //   $http.post('/api/blogs', $scope.formData)
-  //     .success(function(data) {
-  //       $scope.formData = {};
-  //       $location.path('blogs');
-  //       console.log(data, 'Blog created.');
-  //     })     
-  //     .error(function(data) {
-  //       console.log('Error: ' + data);
-  //     })  
-  // };
-
-  // this.deletePost = function(id) {
-  //   $http.delete('/api/blogs/' + id)
-  //     .success(function(data) {
-  //       $scope.blog = data;
-  //       console.log('Blog deleted.', data);
-  //       $http.get('/api/blogs').success(function(data){
-  //         $scope.blog = data;
-  //         console.log(data);
-  //       });
-  //     })
-  //     .error(function(data) {
-  //       console.log('Error: ' + data);
-  //     });
-  // };
-
-}; //End service.
+}); //End service.

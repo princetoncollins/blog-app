@@ -79,7 +79,8 @@ a {
   cursor: pointer; }
 
 .wrapper::-webkit-scrollbar {
-  background: white; }
+  background: white;
+  width: 10px; }
 
 .wrapper::-webkit-scrollbar-thumb {
   background-color: #17762c;
@@ -117,7 +118,7 @@ a {
     font-size: 14px; }
   .blog-container div {
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden; }
     .blog-container div p:first-child {
@@ -149,7 +150,7 @@ a {
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear; }
   .blog-container:hover p:first-of-type, .blog-container:hover p:nth-of-type(2), .blog-container:hover p:nth-of-type(3) {
-    color: #666;
+    color: #389aff;
     -webkit-transition: 0.3s linear;
     transition: 0.3s linear; }
 
@@ -300,7 +301,7 @@ a {
       .readblog-wrapper .readblog-container .body-box p {
         margin-left: 20px;
         font-family: 'Raleway', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         color: #666; }
     .readblog-wrapper .readblog-container .button-container {
       position: absolute;
@@ -387,7 +388,7 @@ a {
   opacity: 0; }
 
 .slide-in {
-  -webkit-animation: slideIn 1s; }
+  -webkit-animation: slideIn 0.8s; }
 @-webkit-keyframes slideIn {
   0% {
     opacity: 0;

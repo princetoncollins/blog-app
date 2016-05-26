@@ -1,6 +1,7 @@
 $blue: #6089be;
 $darkblue: #00337a;
 $lightblue: #afcff1;
+$niceblue: #389aff;
 
 $green: #17bf44;
 $darkgreen: #17762c;
@@ -106,6 +107,7 @@ a {
 
 .wrapper::-webkit-scrollbar {
 	background: white;
+	width: 10px;
 }
 
 .wrapper::-webkit-scrollbar-thumb {
@@ -154,7 +156,7 @@ a {
 	//Body:
 	div {
 		display: -webkit-box;
-		-webkit-line-clamp: 5;
+		-webkit-line-clamp: 4;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		p:first-child {
@@ -192,7 +194,7 @@ a {
 	-webkit-transition: 0.2s linear;
 	transition: 0.2s linear;
 	p:first-of-type, p:nth-of-type(2), p:nth-of-type(3) {
-		color: #666;
+		color: $niceblue;
 		-webkit-transition: 0.3s linear;
 		transition: 0.3s linear;
 	}
@@ -370,7 +372,7 @@ a {
 			p {
 				margin-left: 20px;
 				font-family: 'Raleway', sans-serif;
-				font-size: 18px;
+				font-size: 16px;
 				color: #666;
 			}
 		}
@@ -492,7 +494,7 @@ a {
 		// left: 26.5%;
 	}
 }
-	-webkit-animation: slideIn 1s;
+	-webkit-animation: slideIn 0.8s;
 }
 
 .fade-in {
