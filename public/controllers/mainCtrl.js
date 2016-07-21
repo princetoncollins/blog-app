@@ -1,19 +1,8 @@
 var app = angular.module("blog-app");
 
-app.controller('MainController', ['mainService', '$scope', '$http', '$location', '$stateParams', '$state', function(mainService, $scope, $http, $location, $stateParams, $state) { 
+app.controller('MainController', ['$rootScope', 'mainService', '$scope', '$http', '$location', '$stateParams', '$state', function($rootScope, mainService, $scope, $http, $location, $stateParams, $state) { 
 
-  $scope.formData = {};
 
-  $scope.blog = mainService.blog;
-
-  function getBlogs() {
-      mainService.getPosts().then(function(data) {
-        $scope.blog = data;
-        console.log(data, "The blogs.");
-      });
-  }
-
-  getBlogs();
 
   $scope.readPost = function(id) {
       mainService.readPost(id).then(function(data) {
@@ -22,22 +11,33 @@ app.controller('MainController', ['mainService', '$scope', '$http', '$location',
       });
   };
 
-  $scope.addPost = function(data) {
-      mainService.addPost($scope.formData).then(function(data) {
-        $scope.formData = {};
-        $location.path('blogs');
-        $scope.blog.push(data);
-        getBlogs();
-        console.log(data, 'Blog created.');     
+  $scope.addPost = function(newBlog) {
+      mainService.addPost(newBlog).then(function(data) {
+        $scope.blog = data;
+        console.log(data, 'Blog created.');
+        $state.go('blogs').then(function() {
+          $state.reload('blogs');
+        })
       }); 
   };
 
   $scope.deletePost = function(id) {
       mainService.deletePost(id).then(function() {
-        getBlogs();
         console.log('Blog deleted.');
+        $state.go('blogs');
+        getBlogs();
       })
   };
+
+
+  function getBlogs() {
+      mainService.getPosts().then(function(data) {
+        $scope.blog = data;
+        // console.log(data, "The blogs.");
+      });
+  }
+
+  getBlogs();
 
   // $http.get('/api/blogs').success(function(data){
   //     $scope.blog = data;

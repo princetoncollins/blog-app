@@ -2,14 +2,13 @@ var app = angular.module("blog-app");
 
 app.service('mainService', function($http, $q) {
 
-	var blog = [];
-	var readblog = {};
-	var formData = {};
+	// var blog = [];
 
 	this.getPosts = function() {
-		return $http.get('/api/blogs').then(function(response){
+		return $http.get('/api/blogs').then(function(response) {
   	  		blog = response.data;
   	  		return blog;
+
     	});
 	}
 
@@ -20,8 +19,11 @@ app.service('mainService', function($http, $q) {
 	  });
 	};
 
-	this.addPost = function(formData) {
-		return $http.post('/api/blogs', formData);
+	this.addPost = function(newBlog) {
+		return $http.post('/api/blogs', newBlog).then(function(response) {
+			blog = response.data;
+			return response.data;
+		});
 	};
 
 	this.deletePost = function(id) {

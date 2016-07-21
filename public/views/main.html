@@ -1,17 +1,17 @@
-<div class="wrapper"> 
-	<div class="blog-container" ng-repeat="data in blog | orderBy: '-pubdate'" ng-click="readPost(data._id)" ui-sref=".readblog">  
-		<p><i class="fa fa-sticky-note"></i>&nbsp;<b>{{ data.title }}</b></p>
-   		<p>by {{ data.author }}</p> 
-   		<p>{{ data.pubdate | date }}</p>
-   		<br>
-		<div>
-			<p>{{ data.body }}</p>
-      	</div>
-      	<br><br>
-      	<div class="button-box">
-   			<div id="deletePost" ng-click="deletePost(data._id)"><i class="fa fa-trash-o fa-2x"></i></div>
-   		</div>
-	</div>
+<div class="blogs-wrapper"> 
+   <div class="blog-container" ng-repeat="data in blog | orderBy: '-pubdate'" ng-click="readPost(data._id)">  
+      <p ui-sref=".readblog"><i class="fa fa-sticky-note"></i>&nbsp;<b>{{ data.title }}</b></p>
+      <p>by {{ data.author }}</p> 
+      <p>{{ data.pubdate | date }}</p>
+      <br>
+      <div>
+         <p>{{ data.body }}</p>
+         </div>
+         <br><br>
+         <div class="button-box">
+            <div id="deletePost" ng-click="deletePost(data._id)"><i class="fa fa-trash-o fa-2x"></i></div>
+         </div>
+   </div>
 </div>
 
 <ui-view name="mainContent" class="main-fade"></ui-view>
