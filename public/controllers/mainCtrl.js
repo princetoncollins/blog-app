@@ -1,15 +1,21 @@
 var app = angular.module("blog-app");
 
-app.controller('MainController', ['$rootScope', 'mainService', '$scope', '$http', '$location', '$stateParams', '$state', function($rootScope, mainService, $scope, $http, $location, $stateParams, $state) { 
+app.controller('MainController', ['$resource','$rootScope', 'mainService', '$scope', '$http', '$location', '$stateParams', '$state', function($resource, $rootScope, mainService, $scope, $http, $location, $stateParams, $state) { 
 
+  $scope.blogs = mainService.query(function() {
+    console.log($scope.blogs);
+  })
 
+  $scope.readPost = mainService.readPost(function() {
+    console.log($scope.readPost);
+  })
 
-  $scope.readPost = function(id) {
-      mainService.readPost(id).then(function(data) {
-        $scope.readblog = data;
-        console.log(data, "This is the blog you selected.")
-      });
-  };
+  // $scope.readPost = function(id) {
+  //     mainService.readPost(id).then(function(data) {
+  //       $scope.readblog = data;
+  //       console.log(readblog, "This is the blog you selected.")
+  //     });
+  // };
 
   $scope.addPost = function(newBlog) {
       mainService.addPost(newBlog).then(function(data) {
@@ -24,20 +30,30 @@ app.controller('MainController', ['$rootScope', 'mainService', '$scope', '$http'
   $scope.deletePost = function(id) {
       mainService.deletePost(id).then(function() {
         console.log('Blog deleted.');
-        $state.go('blogs');
+        // $state.go('blogs');
         getBlogs();
       })
   };
 
 
-  function getBlogs() {
-      mainService.getPosts().then(function(data) {
-        $scope.blog = data;
-        // console.log(data, "The blogs.");
-      });
-  }
+  // function getBlogs() {
+  //     mainService.getPosts().then(function(data) {
+  //       $scope.blog = data;
+  //     });
+  // }
 
-  getBlogs();
+  // getBlogs();
+
+
+
+
+
+
+
+
+
+
+
 
   // $http.get('/api/blogs').success(function(data){
   //     $scope.blog = data;

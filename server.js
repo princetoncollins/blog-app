@@ -51,8 +51,7 @@ app.get('/api/blogs/:blog_id', function(req, res) {
 	
 	var id = req.params.blog_id;
 
-	Blog.findById(id,   
-		function(err, blog) {
+	Blog.findById(id, function(err, blog) {
 		if (err)
 			res.send(err);
 		res.json(blog);

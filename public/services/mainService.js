@@ -1,23 +1,30 @@
 var app = angular.module("blog-app");
 
-app.service('mainService', function($http, $q) {
+app.service('mainService', function($http, $q, $resource) {
 
-	// var blog = [];
 
-	this.getPosts = function() {
-		return $http.get('/api/blogs').then(function(response) {
-  	  		blog = response.data;
-  	  		return blog;
+	return $resource('/api/blogs/');
 
-    	});
+	this.readPost = function() {
+		return $resource('/api/blogs/:blog_id', {}, {
+			blog: { method: "GET" }
+		})
 	}
 
-	this.readPost = function(id) {
-		return $http.get('/api/blogs/' + id).then(function(response) {
-	    	readblog = response.data;
-	    	return readblog;
-	  });
-	};
+	// this.getPosts = function() {
+	// 	return $http.get('/api/blogs').then(function(response) {
+ //  	  		blog = response.data;
+ //  	  		return blog;
+
+ //    	});
+	// }
+
+	// this.readPost = function(id) {
+	// 	return $http.get('/api/blogs/' + id).then(function(response) {
+	//     	readblog = response.data;
+	//     	return readblog;
+	//   });
+	// };
 
 	this.addPost = function(newBlog) {
 		return $http.post('/api/blogs', newBlog).then(function(response) {

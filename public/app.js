@@ -1,4 +1,4 @@
-var app = angular.module('blog-app', ['ui.router', 'ngAnimate']);
+var app = angular.module('blog-app', ['ui.router', 'ngAnimate', 'ngResource']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -11,14 +11,7 @@ $urlRouterProvider.otherwise('/blogs');
     	views: {
     		'': {
     			templateUrl: 'views/main.html',
-    			controller: 'MainController',
-                resolve: {
-                    getBlogs: function(mainService) {
-                        return mainService.getPosts().then(function(response) {
-                            return response.data;
-                        })
-                    }
-                }
+    			controller: 'MainController'
     		},
        		'mainContent@blogs': {
     			templateUrl: 'views/home.html',
