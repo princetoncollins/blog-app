@@ -7,13 +7,13 @@
 		<div class="title-box">
 			<h1>{{ readblog.title }}</h1>
 			<h2>&nbsp;by {{ readblog.author }}</h2>
-		</div><br><br>
-		<div class="body-box">
-			<p>{{ readblog.body }}</p>
-		</div>
 		<div class="button-container">
 			<a ng-click="addPost(newBlog)"><div id="button">EDIT</div></a>
 			<a ui-sref="blogs"><div id="button">HOME</div></a>
+		</div>
+		</div><br><br>
+		<div class="body-box">
+			<p>{{ readblog.body }}</p>
 		</div>
 	</div>
 </div>

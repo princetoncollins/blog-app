@@ -1,10 +1,16 @@
-var app = angular.module('blog-app', ['ui.router', 'ngAnimate', 'ngResource']);
+var app = angular.module('blog-app', ['ui.router', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
-$urlRouterProvider.otherwise('/blogs');
+$urlRouterProvider.otherwise('/login');
 
     $stateProvider
+
+    .state('login', {
+        url: '/login',
+                templateUrl: 'views/login.html',
+                controller: 'MainController'            
+    })
 
     .state('blogs', {
     	url: '/blogs',
@@ -15,7 +21,7 @@ $urlRouterProvider.otherwise('/blogs');
     		},
        		'mainContent@blogs': {
     			templateUrl: 'views/home.html',
-    			controller: 'MainController',
+    			controller: 'MainController'
     		}
     	}
     })
@@ -35,7 +41,7 @@ $urlRouterProvider.otherwise('/blogs');
     	views: {
     		'newBlog@blogs': {
     			templateUrl: 'views/newblog.html',
-    			controller: 'MainController',
+    			controller: 'MainController'
     		}
     	}
     });
