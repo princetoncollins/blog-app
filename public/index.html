@@ -5,9 +5,10 @@
 	<title>Blog App</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link href='http://fonts.googleapis.com/css?family=Raleway|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway|Armata|Pontana+Sans|Maven Pro|Pacifico|Montserrat|AbeeZee|Open Sans:300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<!-- Custom Styles -->
+	<link rel="stylesheet" type="text/css" href="style/css/style.min.css">
 	<!-- Angular -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.min.js"></script>
@@ -23,13 +24,11 @@
 <!-- HEADER -->
 <div class="header">
 	<div class="title">
-		<i style="color: #d3f3dd;" class="fa fa-skyatlas fa-2x"></i>&nbsp;
 		<h3>
-			<span>A N G U L A R J S <span style="font-size: 18px; color: #99ffa0;">&#149;</span> B L O G</span>
+			<span>A n g u l a r J S <span style="font-size: 18px; color: #99ffa0;">&#149;</span> B l o g</span>
 		</h3>
 	</div>
 	<div class="nav-bar">
-		<p>Welcome, </p>
 		<div class="nav-div"><a ui-sref="blogs"><i class="fa fa-home fa-2x"></i></a></div>
 	</div>
 </div>
@@ -40,9 +39,9 @@
 
 
 <!-- My Scripts -->
-<script src="app.js"></script>
-<script src="controllers/mainCtrl.js"></script>
-<script src="services/mainService.js"></script>
+<script src="app.routes.js"></script>
+<script src="js/controllers/mainCtrl.js"></script>
+<script src="js/services/mainService.js"></script>
 
 </body>
 </html>

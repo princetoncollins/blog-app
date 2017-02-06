@@ -1,0 +1,167 @@
+$blue: #6089be;
+$darkblue: #00337a;
+$lightblue: #afcff1;
+$niceblue: #389aff;
+
+$green: #17bf44;
+$darkgreen: #17762c;
+$lightgreen: #99ffa0;
+$verylightgreen: #d3f3dd;
+$neongreen: #30ff3e;
+
+html {
+	height: 100%;
+	margin: 0;
+	background: #fff no-repeat;
+}
+
+body {
+	height: 100%;
+	width: 75%;
+	margin: 0 auto;
+	background: white;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+a {
+	text-decoration: none;
+}
+
+//HOME.
+
+.home {
+	position: absolute;
+	top: 6%;
+	left: 32.5%;
+	width: 55%;
+	height: 94%;
+	h1 {
+		position: relative;
+		top: 40%;
+		text-align: center;
+		font-family: 'Raleway', sans-serif;
+		color: $lightgreen;
+		margin: 0;
+	}
+	.pencil {
+		float: right;
+		width: 60px;
+		height: 60px;
+		border-left: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		a {
+			height: 60px;
+			width: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		i {
+			color: $lightgreen;
+		}
+	}
+	.pencil a:hover {
+		background: $lightgreen;
+		color: white;
+		i {
+			color: white;
+		}
+	}
+}
+
+.main-fade.ng-enter {
+	-webkit-transition: 0.4s ease-out;
+	transition: 0.4s ease-out;
+	opacity: 0;
+}
+
+.main-fade.ng-enter-active {
+	opacity: 1;
+}
+
+.main-fade.ng-leave {
+	-webkit-transition: 0.1s ease-out;
+	transition: 0.1s ease-out;
+	opacity: 1;
+}
+
+.main-fade.ng-leave-active {
+	opacity: 1;
+}
+
+.slide-in {
+	@-webkit-keyframes slideIn {
+	0% {
+		opacity: 0;
+		top: -50%;
+		// left: 26.5%;
+	}
+	100% {
+		opacity: 1;
+		top: 40%;
+		// left: 26.5%;
+	}
+}
+	-webkit-animation: slideIn 1s;
+}
+
+.fade-in {
+	@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+	-webkit-animation: fadeIn 1s;
+}
+
+.form {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.writeblog.ng-enter {
+	transition: 0.5s ease-out;
+	opacity: 0;
+	.form {
+		-webkit-transition: 0.5s ease-out;
+		position: relative;
+		bottom: -100%;
+	}
+}
+
+.writeblog.ng-enter-active {
+	transition: 0.5s ease-out;
+	opacity: 1;
+	.form {
+		-webkit-transition: 0.5s ease-out;
+		position: relative;
+		bottom: 0%;
+	}
+}
+
+.writeblog.ng-leave {
+		transition: 0.5s ease-out;
+		opacity: 1;
+	.form {
+		-webkit-transition: 0.3s ease-out;
+		position: relative;
+		bottom: 0%;
+	}
+}
+
+.writeblog.ng-leave-active {
+		transition: 0.5s ease-out;
+		opacity: 0;
+	.form {
+		-webkit-transition: 0.3s ease-out;
+		position: relative;
+		bottom: -100%;
+	}
+}

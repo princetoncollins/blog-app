@@ -1,0 +1,130 @@
+$blue: #6089be;
+$darkblue: #00337a;
+$lightblue: #afcff1;
+$niceblue: #389aff;
+
+$green: #17bf44;
+$darkgreen: #17762c;
+$lightgreen: #99ffa0;
+$verylightgreen: #d3f3dd;
+$neongreen: #30ff3e;
+
+html {
+	height: 100%;
+	margin: 0;
+	background: #fff no-repeat;
+}
+
+body {
+	height: 100%;
+	width: 75%;
+	margin: 0 auto;
+	background: white;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+a {
+	text-decoration: none;
+}
+
+// NEW BLOG POST
+
+.newblog {
+	background: white;
+	height: 94%;
+	width: 55%;
+	position: absolute;
+	top: 6%;
+	left: 32.5%;
+	z-index: 150;
+	overflow: hidden;
+	.exit {
+		color: $lightgreen;
+		padding: 5px;
+		position: absolute;
+		right: 0.5%;
+		z-index: 151;
+	}
+	form {
+		height: 100%;
+		width: 90%;
+		display: flex;
+		margin-top: 20px;
+		flex-direction: column;
+		label {
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 18px;
+			color: $darkgreen;
+			align-self: center;
+		}
+		input.blogtitle {
+			border-bottom: 2px solid $lightgreen;
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			background: transparent;
+			color: $darkgreen;
+			padding: 10px;
+			font-family: 'Raleway', sans-serif;
+			font-size: 30px;
+		}
+		input.blogtitle:focus {
+  			outline: none;
+		}
+		input.blogauthor {
+			border-bottom: 2px solid $lightgreen;
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			background: transparent;
+			color: $darkgreen;
+			padding: 10px;
+			font-family: 'Raleway', sans-serif;
+			font-size: 20px;
+		}
+		input.blogauthor:focus {
+			outline: none;
+		}
+
+		textarea {
+			border: 2px solid $lightgreen;
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			background: transparent;
+			border-radius: 3px;
+			color: #333;
+			padding: 10px;
+			font-family: 'Raleway', sans-serif;
+			font-size: 15px;
+		}
+		textarea:hover {
+			-webkit-transition: 0.5s all;
+			transition: 0.5s all;
+			outline: none;
+		}
+		button {
+			padding: 10px;
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+			color: $green;
+			background: white;
+			border: 2px solid $verylightgreen;
+			border-radius: 20px;
+			width: 40%;
+			align-self: center;
+			cursor: pointer;
+		}
+		button:hover {
+			color: white;
+			background: $green;
+		}
+		i {
+			color: $lightgreen;
+			display: flex;
+			align-self: center;
+		}
+	}
+}

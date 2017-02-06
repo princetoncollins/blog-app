@@ -1,0 +1,31 @@
+$blue: #6089be;
+$darkblue: #00337a;
+$lightblue: #afcff1;
+$niceblue: #389aff;
+
+$green: #17bf44;
+$darkgreen: #17762c;
+$lightgreen: #99ffa0;
+$verylightgreen: #d3f3dd;
+$neongreen: #30ff3e;
+
+// LOGIN.
+
+.login {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.login-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		i {
+			color: $lightgreen;
+			padding: 20px;
+		}
+	}
+}

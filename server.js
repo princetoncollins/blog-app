@@ -70,10 +70,10 @@ app.post('/api/blogs', function(req, res) {
 		date: req.body.date
 	}, function(err, blog) {
 		if (err)
-			res.send(err, "The title is too long.");
+			res.status(400, "The title is too long.").send(blog);
 		Blog.find(function(err, blogs) {
 			if (err)
-				res.send(err);
+				res.status(400);
 			res.json(blogs);
 		});
 	});

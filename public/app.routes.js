@@ -2,15 +2,15 @@ var app = angular.module('blog-app', ['ui.router', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
-$urlRouterProvider.otherwise('/login');
+$urlRouterProvider.otherwise('/blogs');
 
     $stateProvider
 
-    .state('login', {
-        url: '/login',
-                templateUrl: 'views/login.html',
-                controller: 'MainController'            
-    })
+    // .state('login', {
+    //     url: '/login',
+    //             templateUrl: 'views/login.html',
+    //             controller: 'MainController'            
+    // })
 
     .state('blogs', {
     	url: '/blogs',
