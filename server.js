@@ -5,7 +5,6 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var mongojs = require('mongojs');
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
@@ -14,7 +13,7 @@ passport = require('passport');
 var passport = require('passport');
 
 var port = 9001;
-var mongoUri = 'mongodb://localhost:27017/blog-app';
+// var mongoUri = 'mongodb://localhost:27017/blog-app';
 
 var app = express();
 
@@ -95,19 +94,10 @@ app.delete('/api/blogs/:blog_id', function(req, res) {
 	});
 });
 
-// app.get('*', function(req, res) {
-//     res.sendfile('./public/index.html'); 
+// mongoose.connect(mongoUri);
+// mongoose.connection.once('open', function() {
+//   console.log("Hey there! We are now connected to MongoDB at: ", mongoUri);
 // });
-
-//Connectivity.
-//_________________________________________________________________________________________________________________________
-
-// module.exports = router;
-
-mongoose.connect(mongoUri);
-mongoose.connection.once('open', function() {
-  console.log("Hey there! We are now connected to MongoDB at: ", mongoUri);
-});
 
 app.listen(port, function() {
   console.log('Magic! Listening on port: ', port);
